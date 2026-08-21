@@ -1,5 +1,21 @@
 # PAM Native Subscriptions
 
+## Start here
+
+This is a Composer extension for PAM Native. Install the PAM Runtime, create a native project, and then add this package through PAM’s verified Composer toolchain:
+
+```bash
+curl --proto '=https' --proto-redir '=https' --tlsv1.2 \
+    --connect-timeout 15 --max-time 60 --max-filesize 1048576 -fsSL \
+    https://github.com/push-in/pam/releases/latest/download/install.sh | sh
+
+pam init my-app --template native
+cd my-app
+pam composer require pushinbr/pam-native-subscriptions
+pam doctor --fix
+```
+
+
 StoreKit 2 and Google Play Billing subscriptions with products/offers, purchases, pending states, restore, signed JWS or Play purchase tokens, and explicit Play acknowledgement after server verification.
 
 Never grant durable entitlement from the device callback alone. Send `verification` to your backend, validate it with the App Store Server API or Google Play Developer API, persist the entitlement, then acknowledge Google Play purchases.
